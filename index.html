@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Phishing, kuchli parollar va ikki bosqichli autentifikatsiya bo‘yicha amaliy kiberhavfsizlik maslahatlari.">
+  <link rel="stylesheet" href="styles.css">
+  <title>Xavfsiz Internet — Kiberhavfsizlik bo‘yicha maslahatlar</title>
+</head>
+<body>
+  <header id="bosh-sahifa">
+    <nav aria-label="Asosiy navigatsiya">
+      <a href="#bosh-sahifa">Xavfsiz Internet</a>
+      <a href="#qoidalar">Qoidalar</a>
+      <a href="#maslahatlar">Maslahatlar</a>
+      <a href="#tekshiruv">Tekshiruv</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="bosh-sarlavha">
+      <h1 id="bosh-sarlavha">Raqamli hayotingizni xavfsiz saqlang</h1>
+      <p>
+        Phishing, kuchli parollar va ikki bosqichli autentifikatsiya bo‘yicha
+        sodda tushunarli amaliy maslahatlar.
+      </p>
+      <a class="button" href="#qoidalar">Asosiy qoidalarni ko‘rish</a>
+    </section>
+
+    <section id="qoidalar" aria-labelledby="qoidalar-sarlavha">
+      <h2 id="qoidalar-sarlavha">3 asosiy xavfsizlik qoidasi</h2>
+
+      <article>
+        <h3>Kuchli va alohida parollar</h3>
+        <p>Har bir hisob uchun boshqa parol ishlating va parol menejeri yordamida saqlang.</p>
+      </article>
+
+      <article>
+        <h3>Phishing’ni tanib oling</h3>
+        <p>Shubhali havolalarga birmatan bosmang. Jo‘natuvchi manzilini va domenni tekshiring.</p>
+      </article>
+
+      <article>
+        <h3>Ikki bosqichli autentifikatsiyani yoqing</h3>
+        <p>2FA yordamida parolingiz oshkor bo‘lsa ham hisobingizni qo‘shimcha himoyalang.</p>
+      </article>
+    </section>
+
+    <section id="maslahatlar" aria-labelledby="maslahatlar-sarlavha">
+      <h2 id="maslahatlar-sarlavha">Bugundan boshlang</h2>
+      <ul>
+        <li>Eng muhim hisoblaringizga 2FA qo‘shing.</li>
+        <li>Operatsion tizim va ilovalarni yangilang.</li>
+        <li>Bir xil parolni ikki yoki undan ko‘p hisobda ishlatmang.</li>
+      </ul>
+    </section>
+
+    <section id="tekshiruv" aria-labelledby="tekshiruv-sarlavha">
+      <h2 id="tekshiruv-sarlavha">Xavfsizlik tekshiruvi</h2>
+      <p>Bajargan qoidalaringizni belgilang va natijani ko‘ring.</p>
+
+      <ul class="check-list">
+        <li>
+          <label>
+            <input class="security-check" type="checkbox">
+            Har bir hisobim uchun alohida parol bor.
+          </label>
+        </li>
+        <li>
+          <label>
+            <input class="security-check" type="checkbox">
+            Muhim hisoblarimda 2FA yoqilgan.
+          </label>
+        </li>
+        <li>
+          <label>
+            <input class="security-check" type="checkbox">
+            Operatsion tizimim va ilovalarim yangilangan.
+          </label>
+        </li>
+        <li>
+          <label>
+            <input class="security-check" type="checkbox">
+            Shubhali havolalarni tekshirishga harakat qilaman.
+          </label>
+        </li>
+      </ul>
+
+      <div class="progress-row">
+        <progress id="progress" max="4" value="0" aria-label="Bajarilgan qoidalar"></progress>
+        <span id="progress-text" aria-live="polite">0 / 4</span>
+      </div>
+      <p id="feedback" class="feedback" aria-live="polite">Birinchi qoidani belgilab boshlang.</p>
+      <button id="reset-check" class="reset-button" type="button">Qayta boshlash</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Xavfsiz Internet. Bilim — himoyaning birinchi qadami.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
