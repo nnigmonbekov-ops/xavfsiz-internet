@@ -3,100 +3,352 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Phishing, kuchli parollar va ikki bosqichli autentifikatsiya bo‘yicha amaliy kiberhavfsizlik maslahatlari.">
+  <meta name="description" content="Kiberhavfsizlikni bosqichma-bosqich o‘rganing: parol, phishing, 2FA, interaktiv terminal va bilim testi.">
+  <meta name="theme-color" content="#070b12">
   <link rel="stylesheet" href="styles.css">
-  <title>Xavfsiz Internet — Kiberhavfsizlik bo‘yicha maslahatlar</title>
+  <title>Xavfsiz Internet — Kiberhavfsizlikni amalda o‘rganing</title>
 </head>
 <body>
-  <header id="bosh-sahifa">
-    <nav aria-label="Asosiy navigatsiya">
-      <a href="#bosh-sahifa">Xavfsiz Internet</a>
-      <a href="#qoidalar">Qoidalar</a>
-      <a href="#maslahatlar">Maslahatlar</a>
-      <a href="#tekshiruv">Tekshiruv</a>
+  <canvas id="season-canvas" class="season-canvas" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Asosiy navigatsiya">
+      <a class="brand" href="#bosh-sahifa">
+        <span class="brand-mark" aria-hidden="true">XI</span>
+        <span>Xavfsiz<span class="text-accent">Internet</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#yonalish">O‘quv yo‘li</a>
+        <a href="#amaliyot">Amaliyot</a>
+        <a href="#test">Bilim testi</a>
+      </div>
+      <a class="nav-cta" href="#terminal">Terminal <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="bosh-sarlavha">
-      <h1 id="bosh-sarlavha">Raqamli hayotingizni xavfsiz saqlang</h1>
-      <p>
-        Phishing, kuchli parollar va ikki bosqichli autentifikatsiya bo‘yicha
-        sodda tushunarli amaliy maslahatlar.
-      </p>
-      <a class="button" href="#qoidalar">Asosiy qoidalarni ko‘rish</a>
-    </section>
-
-    <section id="qoidalar" aria-labelledby="qoidalar-sarlavha">
-      <h2 id="qoidalar-sarlavha">3 asosiy xavfsizlik qoidasi</h2>
-
-      <article>
-        <h3>Kuchli va alohida parollar</h3>
-        <p>Har bir hisob uchun boshqa parol ishlating va parol menejeri yordamida saqlang.</p>
-      </article>
-
-      <article>
-        <h3>Phishing’ni tanib oling</h3>
-        <p>Shubhali havolalarga birmatan bosmang. Jo‘natuvchi manzilini va domenni tekshiring.</p>
-      </article>
-
-      <article>
-        <h3>Ikki bosqichli autentifikatsiyani yoqing</h3>
-        <p>2FA yordamida parolingiz oshkor bo‘lsa ham hisobingizni qo‘shimcha himoyalang.</p>
-      </article>
-    </section>
-
-    <section id="maslahatlar" aria-labelledby="maslahatlar-sarlavha">
-      <h2 id="maslahatlar-sarlavha">Bugundan boshlang</h2>
-      <ul>
-        <li>Eng muhim hisoblaringizga 2FA qo‘shing.</li>
-        <li>Operatsion tizim va ilovalarni yangilang.</li>
-        <li>Bir xil parolni ikki yoki undan ko‘p hisobda ishlatmang.</li>
-      </ul>
-    </section>
-
-    <section id="tekshiruv" aria-labelledby="tekshiruv-sarlavha">
-      <h2 id="tekshiruv-sarlavha">Xavfsizlik tekshiruvi</h2>
-      <p>Bajargan qoidalaringizni belgilang va natijani ko‘ring.</p>
-
-      <ul class="check-list">
-        <li>
-          <label>
-            <input class="security-check" type="checkbox">
-            Har bir hisobim uchun alohida parol bor.
-          </label>
-        </li>
-        <li>
-          <label>
-            <input class="security-check" type="checkbox">
-            Muhim hisoblarimda 2FA yoqilgan.
-          </label>
-        </li>
-        <li>
-          <label>
-            <input class="security-check" type="checkbox">
-            Operatsion tizimim va ilovalarim yangilangan.
-          </label>
-        </li>
-        <li>
-          <label>
-            <input class="security-check" type="checkbox">
-            Shubhali havolalarni tekshirishga harakat qilaman.
-          </label>
-        </li>
-      </ul>
-
-      <div class="progress-row">
-        <progress id="progress" max="4" value="0" aria-label="Bajarilgan qoidalar"></progress>
-        <span id="progress-text" aria-live="polite">0 / 4</span>
+    <section class="hero container" id="bosh-sahifa">
+      <div class="hero-content">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Kiberhavfsizlik o‘zbek tilida <span class="season-chip" id="season-label">Mavsumiy bezak</span></p>
+        <h1>Xavfsizlikni <span>amalda</span> o‘rganing.</h1>
+        <p class="hero-description">
+          3 ta daraja, 6 savollik test va interaktiv terminal orqali kiberhavfsizlikni
+          bosqichma-bosqich o‘rganing. Har bir mashqdan keyin natijangizni darhol ko‘ring.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#yonalish">O‘quv yo‘lini boshlash <span aria-hidden="true">→</span></a>
+          <a class="button button-ghost" href="#test">Bilimimni sinash</a>
+        </div>
+        <div class="hero-meta">
+          <span>100% bepul</span>
+          <span>Ro‘yxatdan o‘tish shart emas</span>
+          <span>Ma’lumot yig‘ilmaydi</span>
+        </div>
       </div>
-      <p id="feedback" class="feedback" aria-live="polite">Birinchi qoidani belgilab boshlang.</p>
-      <button id="reset-check" class="reset-button" type="button">Qayta boshlash</button>
+
+      <div class="terminal-window" id="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>xavfsiz@internet: ~</span>
+          <span class="terminal-lang">UZ</span>
+        </div>
+        <div class="terminal-body">
+          <div id="terminal-output" class="terminal-output" role="log" aria-live="polite">
+            <p><span class="prompt">xavfsiz@internet:~$</span> ./status</p>
+            <p class="terminal-muted">Xavfsiz Internet tizimiga xush kelibsiz.</p>
+            <p><span class="terminal-ok">[OK]</span> 3 o‘quv darajasi yuklandi</p>
+            <p><span class="terminal-ok">[OK]</span> 6 test savoli tayyor</p>
+            <p><span class="terminal-ok">[OK]</span> Interaktiv terminal faol</p>
+            <p class="terminal-muted">Yordam uchun <span class="terminal-command">help</span> buyrug‘ini yozing.</p>
+          </div>
+          <form id="terminal-form" class="terminal-form" autocomplete="off">
+            <label class="sr-only" for="terminal-input">Terminal buyrug‘i</label>
+            <span class="prompt">xavfsiz@internet:~$</span>
+            <input id="terminal-input" name="command" type="text" placeholder="help yozib Enter bosing" spellcheck="false" autocapitalize="off">
+            <button type="submit" aria-label="Buyruqni bajarish">↵</button>
+          </form>
+          <div class="terminal-hints" aria-label="Tavsiya etilgan buyruqlar">
+            <button type="button" data-command="help">help</button>
+            <button type="button" data-command="2fa">2fa</button>
+            <button type="button" data-command="phishing">phishing</button>
+            <button type="button" data-command="clear">clear</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats container" aria-label="Sayt statistikasi">
+      <div class="stat"><strong>03</strong><span>Bosqichma-bosqich daraja</span></div>
+      <div class="stat"><strong>06</strong><span>Interaktiv test savoli</span></div>
+      <div class="stat"><strong>04</strong><span>Amaliy vosita</span></div>
+      <div class="stat"><strong>100%</strong><span>Bepul va ochiq</span></div>
+    </section>
+
+    <section class="value-strip container" aria-label="Bu sayt nima uchun foydali">
+      <article>
+        <span class="value-index">01</span>
+        <div><h3>Aniq yo‘l</h3><p>Nimani o‘rganish kerakligini bilasiz — tartib va darajalar bilan.</p></div>
+      </article>
+      <article>
+        <span class="value-index">02</span>
+        <div><h3>Amaliy natija</h3><p>Faqat o‘qib qo‘ymaysiz; terminal, parol tekshiruvi va testda sinaysiz.</p></div>
+      </article>
+      <article>
+        <span class="value-index">03</span>
+        <div><h3>Xavfsiz muhit</h3><p>Ro‘yxatdan o‘tish yo‘q. Shaxsiy ma’lumotlaringiz yig‘ilmaydi.</p></div>
+      </article>
+    </section>
+
+    <section class="section container" id="yonalish">
+      <div class="section-heading">
+        <p class="section-kicker">01 / O‘QUV YO‘LI</p>
+        <h2>Bosqichma-bosqich, aniq yo‘l.</h2>
+        <p>Har bir darajada 3 ta mavzu. Avval asoslarni mustahkamlang, so‘ng tahlil va ilg‘or himoyaga o‘ting.</p>
+      </div>
+      <div class="path-grid">
+        <article class="path-card">
+          <div class="path-top"><span>LEVEL 01</span><span class="level-badge">Boshlang‘ich</span></div>
+          <h3>Asoslarni mustahkamlang</h3>
+          <p>Har kuni ishlatiladigan eng muhim himoya qoidalari.</p>
+          <ol>
+            <li><span>01</span><div><strong>Parol strategiyasi</strong><small>Alohida va kuchli parollar</small></div></li>
+            <li><span>02</span><div><strong>2FA’ni yoqing</strong><small>Qo‘shimcha himoya qatlami</small></div></li>
+            <li><span>03</span><div><strong>Yangilanishlar</strong><small>Xavfsizlik kamchiliklari</small></div></li>
+          </ol>
+          <a href="#test">Bilimni sinash <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="path-card path-card-featured">
+          <div class="path-top"><span>LEVEL 02</span><span class="level-badge">O‘rta</span></div>
+          <h3>Shubhani oldindan ko‘ring</h3>
+          <p>Phishing va raqamli izlarni tahlil qilishni o‘rganing.</p>
+          <ol>
+            <li><span>01</span><div><strong>Phishing tahlili</strong><small>Soxta xabar belgilari</small></div></li>
+            <li><span>02</span><div><strong>Domen tekshiruvi</strong><small>Havola manzilini aniqlash</small></div></li>
+            <li><span>03</span><div><strong>Zaxira nusxalar</strong><small>Ma’lumotni tiklash</small></div></li>
+          </ol>
+          <a href="#test">Bilimni sinash <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="path-card">
+          <div class="path-top"><span>LEVEL 03</span><span class="level-badge">Ilg‘or</span></div>
+          <h3>Himoyani tizimli quring</h3>
+          <p>Shaxsiy qurilmalar va hisoblar uchun kuchliroq himoya.</p>
+          <ol>
+            <li><span>01</span><div><strong>Eng kam huquq</strong><small>Faqat kerakli ruxsatlar</small></div></li>
+            <li><span>02</span><div><strong>Loglarni tushunish</strong><small>Shubhali faoliyat izlari</small></div></li>
+            <li><span>03</span><div><strong>Hodisa rejasi</strong><small>Muammoga tez javob</small></div></li>
+          </ol>
+          <a href="#test">Bilimni sinash <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="organish">
+      <div class="section-heading">
+        <p class="section-kicker">02 / ASOSIY MASLAHATLAR</p>
+        <h2>Bilim — birinchi himoya.</h2>
+        <p>Har kuni ishlatadigan oddiy qoidalar bilan raqamli hayotingizni xavfsizroq qiling.</p>
+      </div>
+      <div class="course-grid">
+        <article class="course-card">
+          <div class="card-top"><span class="card-index">01</span><span class="tag">ASOSLAR</span></div>
+          <h3>Parol xavfsizligi</h3>
+          <p>Kuchli va alohida parollar hisoblaringizni birinchi qatlamda himoyalaydi.</p>
+          <ul>
+            <li>Har bir hisobda boshqa parol</li>
+            <li>Parol menejeridan foydalanish</li>
+            <li>Ikki bosqichli himoya</li>
+          </ul>
+          <a href="#parol">Parolimni sinash <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="course-card">
+          <div class="card-top"><span class="card-index">02</span><span class="tag">TAHLIL</span></div>
+          <h3>Phishing’ni tanib olish</h3>
+          <p>Soxta xabar va havolalarni oldindan sezib, ma’lumotlaringizni saqlab qoling.</p>
+          <ul>
+            <li>Domen va jo‘natuvchini tekshirish</li>
+            <li>Shubhali iliqxatlarga ehtiyot bo‘lish</li>
+            <li>Havolani ochmasdan tekshirish</li>
+          </ul>
+          <a href="#terminal">Terminalda sinash <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="course-card">
+          <div class="card-top"><span class="card-index">03</span><span class="tag">HIMOYA</span></div>
+          <h3>Ikki bosqichli autentifikatsiya</h3>
+          <p>2FA parol oshkor bo‘lsa ham hisobingizga kirishni qo‘shimcha qiyinlashtiradi.</p>
+          <ul>
+            <li>Muhim hisoblarda 2FA yoqish</li>
+            <li>Authenticator ilovadan foydalanish</li>
+            <li>Zaxira kodlarni saqlash</li>
+          </ul>
+          <a href="#terminal">2FA buyrug‘ini sinash <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="amaliyot">
+      <div class="section-heading">
+        <p class="section-kicker">03 / AMALIYOT</p>
+        <h2>Bugundan himoyalaning.</h2>
+        <p>Katta o‘zgarishlarni kutmasdan, kichik va muntazam qadamlardan boshlang.</p>
+      </div>
+      <div class="practice-grid">
+        <article class="practice-card">
+          <p class="panel-label">KUN TARTIBI</p>
+          <h3>5 daqiqalik xavfsizlik odati</h3>
+          <ol>
+            <li>Muhim hisoblaringizdagi 2FA holatini tekshiring.</li>
+            <li>Operatsion tizim va ilovalarni yangilang.</li>
+            <li>Bir xil ishlatilgan parollarni almashtiring.</li>
+            <li>Bugungi shubhali xabarlarni qayta ko‘rib chiqing.</li>
+          </ol>
+        </article>
+        <article class="practice-card practice-card-accent">
+          <p class="panel-label">PHISHING BELGILARI</p>
+          <h3>Xabar ochilishidan oldin</h3>
+          <ul>
+            <li>Jo‘natuvchi manzili kutilgan bilan bir xilmi?</li>
+            <li>Havola qisqa yoki boshqa domenga o‘tadimi?</li>
+            <li>Shoshilinch va qo‘rqituvchi matn bormi?</li>
+            <li>Hisob ma’lumotlaringizni so‘rayaptimi?</li>
+          </ul>
+          <a href="#terminal">Terminalda tekshirish <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="tekshiruv">
+      <div class="checklist-layout">
+        <div class="checklist-intro">
+          <p class="section-kicker">04 / TEKSHIRUV</p>
+          <h2>Himoyangiz qanchalik mustahkam?</h2>
+          <p>Bajargan qoidalaringizni belgilang. Natija faqat shu brauzerda ko‘rsatiladi va hech qayerga yuborilmaydi.</p>
+          <div class="code-note"><span>&gt;</span> security_check --local</div>
+        </div>
+        <div class="checklist-panel">
+          <ul class="check-list">
+            <li><label><input class="security-check" type="checkbox">Har bir hisobim uchun alohida parol bor.</label></li>
+            <li><label><input class="security-check" type="checkbox">Muhim hisoblarimda 2FA yoqilgan.</label></li>
+            <li><label><input class="security-check" type="checkbox">Operatsion tizimim va ilovalarim yangilangan.</label></li>
+            <li><label><input class="security-check" type="checkbox">Shubhali havolalarni tekshirishga harakat qilaman.</label></li>
+          </ul>
+          <div class="progress-row">
+            <progress id="progress" max="4" value="0" aria-label="Bajarilgan qoidalar"></progress>
+            <span id="progress-text" aria-live="polite">0 / 4</span>
+          </div>
+          <p id="feedback" class="feedback" aria-live="polite">Birinchi qoidani belgilab boshlang.</p>
+          <button id="reset-check" class="reset-button" type="button">Qayta boshlash</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="parol">
+      <div class="checklist-layout">
+        <div class="checklist-intro">
+          <p class="section-kicker">05 / PAROL TEKSHIRUVI</p>
+          <h2>Parolingiz qanchalik mustahkam?</h2>
+          <p>Istalgan parol yoki namuna yozing. Tekshiruv faqat shu brauzerda bajariladi; parol saqlanmaydi va hech qayerga yuborilmaydi.</p>
+          <div class="code-note"><span>&gt;</span> password_check --local</div>
+        </div>
+        <div class="checklist-panel password-panel">
+          <label class="password-label" for="password-input">Parolni tekshirish</label>
+          <div class="password-field">
+            <input id="password-input" class="password-input" type="password" placeholder="Istalgan parol yoki namuna yozing" autocomplete="new-password" spellcheck="false" autocapitalize="off" aria-describedby="password-feedback">
+            <button id="password-toggle" class="password-toggle" type="button" aria-label="Parolni ko‘rsatish" aria-pressed="false">Ko‘rsatish</button>
+          </div>
+          <div class="password-strength-row">
+            <span id="password-strength-label">Hali tekshirilmadi</span>
+            <span id="password-length">0 belgi</span>
+          </div>
+          <div id="password-strength" class="password-strength" role="progressbar" aria-label="Parol mustahkamligi" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0" aria-valuetext="Hali tekshirilmadi" data-score="0">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <p id="password-feedback" class="password-feedback" aria-live="polite">Parol yozish bilan shartlar tekshiriladi.</p>
+          <ul class="password-rules">
+            <li id="rule-length" data-valid="false">Kamida 12 ta belgi</li>
+            <li id="rule-letters" data-valid="false">Katta va kichik harflar</li>
+            <li id="rule-number" data-valid="false">Kamida bitta raqam</li>
+            <li id="rule-symbol" data-valid="false">Kamida bitta maxsus belgi</li>
+          </ul>
+          <p class="password-note">Bu taxminiy baho: kuchli parol — uzun, tasodifiy va har bir hisobda alohida bo‘lgan paroldir.</p>
+          <button id="password-clear" class="reset-button" type="button">Tozalash</button>
+          <noscript><p class="password-feedback">Parol tekshiruvi uchun JavaScript’ni yoqing.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="test">
+      <div class="quiz-layout">
+        <div class="quiz-intro">
+          <p class="section-kicker">06 / BILIM TESTI</p>
+          <h2>Bilimingizni sinang.</h2>
+          <p>6 ta savol, 3 ta daraja va har bir javobdan keyin tushuntirish. Test natijasi faqat sizga ko‘rinadi.</p>
+          <div class="quiz-facts">
+            <span><strong>06</strong> savol</span>
+            <span><strong>03</strong> daraja</span>
+            <span><strong>100%</strong> bepul</span>
+          </div>
+        </div>
+        <div class="quiz-panel">
+          <div class="quiz-top">
+            <span id="quiz-step">01 / 06</span>
+            <span id="quiz-score">0 ball</span>
+          </div>
+          <progress id="quiz-progress" max="6" value="1" aria-label="Test progressi"></progress>
+          <form id="quiz-form">
+            <fieldset class="quiz-fieldset">
+              <legend id="quiz-question"></legend>
+              <div id="quiz-options" class="quiz-options"></div>
+            </fieldset>
+            <p id="quiz-feedback" class="quiz-feedback" aria-live="polite"></p>
+            <div class="quiz-actions">
+              <button id="quiz-submit" class="button button-primary" type="submit">Javobni tekshirish</button>
+              <button id="quiz-next" class="button button-ghost" type="button" hidden>Keyingi savol</button>
+            </div>
+          </form>
+          <div id="quiz-result" class="quiz-result" hidden>
+            <p class="section-kicker">NATIJA</p>
+            <h3 id="quiz-result-title"></h3>
+            <p id="quiz-result-text"></p>
+            <div id="quiz-result-score" class="quiz-result-score"></div>
+            <button id="quiz-reset" class="reset-button" type="button">Qayta boshlash</button>
+          </div>
+          <noscript><p class="quiz-feedback">Bilim testi uchun JavaScript’ni yoqing.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="final-cta">
+        <div>
+          <p class="section-kicker">KEYINGI QADAM</p>
+          <h2>Bitta qoidadan boshlang.</h2>
+          <p>Bugun eng muhim hisobingizga 2FA qo‘shing yoki parolingizni yangilang.</p>
+        </div>
+        <a class="button button-primary" href="#parol">Parolimni sinash <span aria-hidden="true">→</span></a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>Xavfsiz Internet. Bilim — himoyaning birinchi qadami.</p>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <a class="brand footer-brand" href="#bosh-sahifa">
+          <span class="brand-mark" aria-hidden="true">XI</span>
+          <span>Xavfsiz<span class="text-accent">Internet</span></span>
+        </a>
+        <p>Bilim — himoyaning birinchi qadami.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#yonalish">O‘quv yo‘li</a>
+        <a href="#amaliyot">Amaliyot</a>
+        <a href="#test">Bilim testi</a>
+        <a href="https://github.com/nnigmonbekov-ops/xavfsiz-internet">GitHub</a>
+      </div>
+      <p class="footer-meta">© 2026 Xavfsiz Internet · Maxfiy ma’lumotlar yig‘ilmaydi</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
